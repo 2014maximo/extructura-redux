@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { appState } from './app.reducer';
 
+import * as fromMensaje from './mensaje.action';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,9 +18,9 @@ export class AppComponent {
   }
 
   spanishMensaje(){
-    this.store.dispatch({ type: "SPANISH"});
+    this.store.dispatch(new fromMensaje.SpanishMensaje('Los colores'));
   }
   englishMensaje(){
-    this.store.dispatch({ type: "ENGLISH"});
+    this.store.dispatch(new fromMensaje.EnglishMensaje('yellow'));
   }
 }
