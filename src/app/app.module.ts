@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { miReducer } from './app.reducer';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,6 +18,10 @@ import { miReducer } from './app.reducer';
     AppRoutingModule,
     StoreModule.forRoot({
       texto: miReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge:10
+
     })
   ],
   providers: [],
