@@ -13,7 +13,7 @@ export class SpanishMensaje implements Action {
 }
 
 export class EnglishMensaje implements Action {
-    
+     
     readonly type = ENGLISH;
 
     constructor( public payload: string ){

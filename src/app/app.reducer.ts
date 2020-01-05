@@ -1,4 +1,5 @@
 import { Action } from "@ngrx/store";
+import * as fromMensaje from './mensaje.action';
 
 export interface appState {
     texto: string
@@ -8,21 +9,21 @@ export const initialState = {
     texto : 'Codigo Mentor'
 }
 
-export function miReducer(state: appState = initialState, action: Action){
+export function miReducer(state: appState = initialState, action: fromMensaje.MensajeActions){
     console.log(action);
     
     switch(action.type){
 
-        case 'SPANISH':
+        case fromMensaje.SPANISH:
             return {
                 ...state,
-                texto: 'Hola mundo'
+                texto: action.payload
             }
 
-        case 'ENGLISH':
+        case fromMensaje.ENGLISH:
             return {
                 ...state,
-                texto: 'Hello world'
+                texto: action.payload
             }
         default:
             return state;
